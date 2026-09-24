@@ -1,0 +1,1 @@
+A bug in GDAL's NTF (Ordnance Survey) vector driver makes AddressSanitizer report a 6-byte heap overflow read because a signed count parsed from a composite-polygon record is used without a non-negativity check to compute a read offset, so a large negative count points just before the record's small buffer.
