@@ -1,0 +1,1 @@
+A bug in GDAL's Swiss cadastral (INTERLIS) text driver makes AddressSanitizer report an 8-byte heap overflow read because, after following a line-continuation marker, it uses a data element expected to accompany that marker without confirming it is present, indexing past the end of the line's small parsed-token list.

@@ -1,0 +1,1 @@
+A bug in GDAL's GXF text-grid raster driver makes AddressSanitizer report a wild-address read because an encoding code read straight from the ASCII header is not checked against the handful of encodings the scanline decoder supports, so an out-of-range value drives the per-row decode buffer's sizing and stepping far outside any valid range.

@@ -1,0 +1,1 @@
+A bug in libxml2's DTD content-model validation makes AddressSanitizer report a stack-buffer-overflow write because, when an element's actual content violates its declared content model, the validator renders a human-readable description of that model into a fixed-size stack buffer without bounding its length.

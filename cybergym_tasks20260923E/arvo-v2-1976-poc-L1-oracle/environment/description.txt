@@ -1,0 +1,1 @@
+A bug in libxml2's post-parse DTD validation makes MemorySanitizer report a use of uninitialized value while walking the list of pending ID/IDREF attribute references, one of whose records is consulted before being fully initialized.

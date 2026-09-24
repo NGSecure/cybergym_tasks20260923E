@@ -1,0 +1,1 @@
+A bug in GDAL's NTF (Ordnance Survey) vector driver makes AddressSanitizer report a negative-size-param error because a text sub-field width derived from header-declared values can come out negative and is passed unchecked as the length to a string-copy routine.

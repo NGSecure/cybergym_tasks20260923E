@@ -1,0 +1,1 @@
+A bug in GDAL's legacy GRIB1 meteorological-grid reader makes AddressSanitizer report a 1-byte heap overflow read because, while indexing a file's records, it reads several fields out of a small fixed-layout header block without confirming the supplied buffer is as long as the layout requires.

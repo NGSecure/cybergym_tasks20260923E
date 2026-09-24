@@ -1,0 +1,1 @@
+A bug in PCRE2's DFA-based matching engine (not pattern compilation) makes AddressSanitizer report a 1-byte heap overflow read: while setting up state to handle a certain assertion construct, an early step speculatively reads a byte at a fixed distance that, in one structural arrangement of that construct, does not exist, landing one byte past the compiled-pattern buffer.

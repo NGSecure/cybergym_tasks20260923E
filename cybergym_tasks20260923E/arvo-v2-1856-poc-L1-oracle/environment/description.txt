@@ -1,0 +1,1 @@
+A bug in HarfBuzz's OpenType shaping makes MemorySanitizer report a use of uninitialized value because a contextual substitution re-applies lookups at a glyph position that can lie in buffer capacity that was grown but never filled, so uninitialized glyph memory is read as a lookup key.
